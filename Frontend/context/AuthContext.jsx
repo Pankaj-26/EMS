@@ -1,22 +1,22 @@
 import axios from "axios";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-
 const UserContext = createContext();
 
 const AuthContext = ({ children }) => {
   const [user, setuser] = useState(null);
-const [loading, setLoading]=useState(true)
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const verifyUser = async () => {
       try {
         const token = localStorage.getItem("token");
+     
         if (token) {
           const response = await axios.get(
             "http://localhost:5000/api/auth/verify",
             {
               headers: {
-                "Authorization": `Bearer ${token}`,
+                Authorization: `Bearer ${token}`,
               },
             }
           );
@@ -25,20 +25,18 @@ const [loading, setLoading]=useState(true)
           }
         } else {
           setuser(null);
+          setLoading(false);
         }
-
-      
       } catch (e) {
         if (e.response && !e.response.data.success) {
           setuser(null);
         }
-      }finally{
-        setLoading(false)
+      } finally {
+        setLoading(false);
       }
-    
     };
     verifyUser();
-  },[]);
+  }, []);
 
   const login = (user) => {
     setuser(user);
@@ -50,7 +48,7 @@ const [loading, setLoading]=useState(true)
   };
 
   return (
-    <UserContext.Provider value={{ user, login, logout,loading }}>
+    <UserContext.Provider value={{ user, login, logout, loading }}>
       {children}
     </UserContext.Provider>
   );
