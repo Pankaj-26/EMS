@@ -4,14 +4,21 @@ import dotenv from 'dotenv';
 import authRouter from "./routes/auth.js"
 import connection from "./db/db.js"
 import departmentRoute from "./routes/department.js"
+import employeeRoute from "./routes/employee.js"
+
+
+
 
 connection()
 const app=express();
 dotenv.config();
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public/uploads'))
 app.use("/api/auth",authRouter)
 app.use("/api/department",departmentRoute)
+app.use("/api/employee",employeeRoute)
+
 
 
 
