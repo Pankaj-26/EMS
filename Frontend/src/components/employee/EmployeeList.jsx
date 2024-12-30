@@ -10,6 +10,8 @@ const EmployeeeList = () => {
   const [filteredEmployees, setFilteredEmployees] = useState([]); 
 
 
+ 
+
   useEffect(() => {
     const fetchEmployees = async () => {
       setDepLoading(true);
@@ -19,22 +21,27 @@ const EmployeeeList = () => {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
+        
 
-      
+      console.log(response.data.employees)
         if (response.data.success) {
           let sno = 1;
+        
           const data = response.data.employees.map((emp) => ({
             _id: emp._id,
             sno: sno++,
             dep_name: emp.department.dep_name,
             name:emp.userId.name,
-            dob:new Date(emp.dob).toLocalDateString(),
+            dob:new Date(emp.dob).toDateString(),
             profileImage: <img className='rounded-full' src={`http://localhost:5000/${emp.userId.profileImage}`} alt="" />  ,
-            action: (<EmployeeButtons Id={emp._id}/>),
+            action: (<EmployeeButtons id={emp._id}/>),
           }));
+       
           setEmployees(data);
+         
           setFilteredEmployees(data); // Initially, show all Employees
         }
+        
       } catch (e) {
         if (e.response && !e.response.data.success) {
           alert(e.response.data.error);
@@ -48,7 +55,14 @@ const EmployeeeList = () => {
   }, []);
 
 
+const handleFilter=(e)=>{
 
+  const records=employees.filter((emp)=>{
+    emp.name.toLowerCase().includes(e.target.value.toLowerCase())
+
+  })
+  setFilteredEmployees(records);
+}
 
 
   return (
@@ -61,7 +75,7 @@ const EmployeeeList = () => {
       type="text"
       className="px-4 py-0.5 border"
       placeholder="Search by department name"
-      
+      onChange={handleFilter}
     />
     <Link
       to="/admin-dashboard/add-employee"
@@ -70,9 +84,11 @@ const EmployeeeList = () => {
       Add Employee
     </Link>
   </div>
-  <DataTable columns={columns} data={employees} />
+  <DataTable columns={columns} data={filteredEmployees} pagination />
   </div>
   )
 }
 
 export default EmployeeeList
+
+///last 

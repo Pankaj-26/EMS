@@ -9,8 +9,8 @@ import axios from "axios";
 
 const DepartmentList = () => {
   const [depLoading, setDepLoading] = useState(false);
-  const [departments, setDepartments] = useState([]); // Full department list
-  const [filteredDepartments, setFilteredDepartments] = useState([]); // Filtered department list
+  const [departments, setDepartments] = useState([]); 
+  const [filteredDepartments, setFilteredDepartments] = useState([]); 
 
   // Function to delete a department
   const departmentDelete = (_id) => {

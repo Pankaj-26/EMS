@@ -309,6 +309,9 @@ const AddEmployee = () => {
       formDataObj.append(key, formData[key]);
     });
 
+    for (let [key, value] of formDataObj.entries()) {
+      console.log(`${key}: ${value}`);
+  }
    
       
     try {
@@ -362,7 +365,7 @@ const AddEmployee = () => {
               type="email"
               name="email"
               placeholder="Enter Email"
-              className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+              className="mt-1 p-2 text-black block w-full border border-gray-300 rounded-md"
               required
             />
           </div>
