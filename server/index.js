@@ -5,7 +5,7 @@ import authRouter from "./routes/auth.js"
 import connection from "./db/db.js"
 import departmentRoute from "./routes/department.js"
 import employeeRoute from "./routes/employee.js"
-
+import salaryRouter from "./routes/salary.js"
 
 
 
@@ -18,6 +18,7 @@ app.use(express.static('public/uploads'))
 app.use("/api/auth",authRouter)
 app.use("/api/department",departmentRoute)
 app.use("/api/employee",employeeRoute)
+app.use("/api/salary",salaryRouter)
 
 
 

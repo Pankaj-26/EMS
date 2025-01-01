@@ -35,7 +35,7 @@ export const EmployeeButtons = ({ id }) => {
         View
       </button>
       <button className="px-3 py-1 bg-blue-500 text-white" onClick={() => navigate(`/employees/edit/${id}`)}>Edit</button>
-      <button className="px-3 py-1 bg-yellow-500 text-white">salary</button>
+      <button className="px-3 py-1 bg-yellow-500 text-white" onClick={() => navigate(`/employees/salary/${id}`)}>salary</button>
       <button className="px-3 py-1 bg-gray-500 text-white">leave</button>
     </div>
   );
@@ -75,3 +75,28 @@ export const columns = [
     center: "true",
   },
 ];
+
+
+
+// Employee for salary
+
+export const getEmployees = async (id) => {
+  let employees;
+
+  try {
+    const response = await axios.get(`http://localhost:5000/api/employee/department/${id}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+
+    if (response.data.success) {
+      employees = response.data.employees;
+    }
+  } catch (e) {
+    if (e.response && !e.response.data.success) {
+      alert(e.response.data.error);
+    }
+  }
+  return employees;
+};
