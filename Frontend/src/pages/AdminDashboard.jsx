@@ -16,7 +16,8 @@ const AdminDashboard = () => {
       <Navbar/>
      <Outlet/>
       </div>
-     </div>);
+     </div>
+     );
 };
 
 export default AdminDashboard;

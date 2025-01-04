@@ -13,13 +13,14 @@ const ViewSalary = () => {
 const fetchSalaries=async()=>{
 
   try{
-    const response=await axios.get(`http:localhost:5000/api/salary/${id}`,{
+    const response=await axios.get(`http://localhost:5000/api/salary/view/${id}`,{
       headers:{
         Authorization:`Bearer ${localStorage.getItem("token")}`
       }
     })
-
+    console.log(response.data.salary)
     if(response.data.success){
+     
       setSalaries(response.data.salary);
       setFiltered(response.data.salary);
     }
@@ -34,13 +35,17 @@ const fetchSalaries=async()=>{
 
 useEffect(()=>{
   fetchSalaries()
-})
+},[])
 
-const filterSalaries=(e)=>{
-  const filterRecords=salaries.filter((leave)=>leave.employeeId.toLowerCase().includes(e.toLowerCase()))
+const filterSalaries = (e) => {
+  if (!salaries) return;
+  const searchTerm = e.target.value.toLowerCase();
+  const filteredRecords = salaries.filter((leave) =>
+    leave.employeeId.toLowerCase().includes(searchTerm)
+  );
+  setFiltered(filteredRecords);
+};
 
-  setFiltered(filterRecords)
-}
 
 
   return (
@@ -56,7 +61,7 @@ const filterSalaries=(e)=>{
         <div className='flex justify-end my-3'>
           <input type="text" placeholder='search by emp id' className='border px-2 rounded-md py-0.5 border-gray-300' onChange={filterSalaries} />
         </div>
-        {filterSalaries.length>0?(
+        {filtered && filtered.length>0?(
           <table className='w-full text-sm text-left text-gray-500'>
             <thead className='text-xs text-gray-700 uppercase bg-gray-50 border border-gray-200'>
               <tr>
@@ -72,8 +77,8 @@ const filterSalaries=(e)=>{
             <tbody>
               {filtered.map((salary)=>(
                 <tr key={salary.id} className='bg-white border-b dark:bg-gray-800 dark:border-gray-700'>
-                  <td className='px-6 py-3'>{sn0++}</td>
-                  <td className='px-6 py-3'>{salary.employeeId.empployeeId}</td>
+                  <td className='px-6 py-3'>{sno++}</td>
+                  <td className='px-6 py-3'>{salary.employeeId.employeeId}</td>
                   <td className='px-6 py-3'>{salary.basicSalary}</td>
                   <td className='px-6 py-3'>{salary.allowances}</td>
                   <td className='px-6 py-3'>{salary.deductions}</td>
@@ -94,3 +99,6 @@ const filterSalaries=(e)=>{
 }
 
 export default ViewSalary
+
+
+
