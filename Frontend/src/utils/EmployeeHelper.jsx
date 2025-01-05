@@ -36,7 +36,7 @@ export const EmployeeButtons = ({ id }) => {
       </button>
       <button className="px-3 py-1 bg-blue-500 text-white" onClick={() => navigate(`/employees/edit/${id}`)}>Edit</button>
       <button className="px-3 py-1 bg-yellow-500 text-white" onClick={() => navigate(`/employees/salary/${id}`)}>salary</button>
-      <button className="px-3 py-1 bg-gray-500 text-white">leave</button>
+      <button className="px-3 py-1 bg-gray-500 text-white" onClick={() => navigate(`/admin-dashboard/employee/leaves/${id}`)}>leave</button>
     </div>
   );
 };

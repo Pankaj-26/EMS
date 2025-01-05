@@ -21,7 +21,7 @@ const AdminSideBar = () => {
                 <FaBuilding/>
                 <span>Department</span>
             </NavLink>
-            <NavLink to="/admin-dashboard" className='flex items-ceter space-x-4 block py-2.5 px-4 rouded'>
+            <NavLink to="/admin-dashboard/leaves" className={({isActive})=>`${isActive?"bg-teal-500":""} flex items-center space-x-4 block py-2.5 px-4 rounded`}>
                 <FaCalendarAlt/>
                 <span>Leave</span>
             </NavLink>
@@ -29,7 +29,7 @@ const AdminSideBar = () => {
                 <FaMoneyBillWave/>
                 <span>Salary</span>
             </NavLink>
-            <NavLink to="/admin-dashboard" className='flex items-ceter space-x-4 block py-2.5 px-4 rouded'>
+            <NavLink to="/admin-dashboard/setting" className='flex items-ceter space-x-4 block py-2.5 px-4 rouded'>
                 <FaCogs/>
                 <span>Settings</span>
             </NavLink>

@@ -20,6 +20,8 @@ import SummaryCard from "./components/EmployeeDashboard.jsx/SummaryCard";
 import List from "./components/leave/List";
 import AddLeave from "./components/leave/AddLeave";
 import Setting from "./components/EmployeeDashboard.jsx/Setting";
+import Table from "./components/leave/Table";
+import LeaveDetail from "./components/leave/LeaveDetail";
 
 
 
@@ -58,7 +60,12 @@ function App() {
         <Route path="/employees/edit/:id" element={<Edit />} />
         <Route path="/admin-dashboard/salary/add" element={<Add />} />
         <Route path="/employees/salary/:id" element={<ViewSalary />} />
-
+        <Route path="/admin-dashboard/leaves" element={<Table />} />
+        <Route path={`/admin-dashboard/leaves/:id`} element={<LeaveDetail />} />
+        <Route path={"/admin-dashboard/employee/leaves/:id"} element={<List />} />
+        <Route path={"/admin-dashboard/setting"} element={<Setting />} />
+        
+     
         {/* Employee Dashboard routes */}
         <Route
           path="/employee-dashboard"
@@ -73,7 +80,7 @@ function App() {
           {/* Nested child routes */}
           <Route index element={<SummaryCard />} />
           <Route path="/employee-dashboard/profile/:id" element={<View />} />
-          <Route path="/employee-dashboard/leaves" element={<List />} />
+          <Route path="/employee-dashboard/leaves/:id" element={<List />} />
           <Route path="/employee-dashboard/add-leave" element={<AddLeave />} />
           <Route path="/employee-dashboard/salary/:id" element={<ViewSalary />} />
           <Route path="/employee-dashboard/setting" element={<Setting />} />
