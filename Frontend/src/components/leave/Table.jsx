@@ -93,7 +93,7 @@ const Table = () => {
       </div>
       
       <div className="flex justify-between items-center mb-6">
-        <div className="relative w-1/3">
+        <div className="relative text-black w-1/3">
           <input
             type="text"
             className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
