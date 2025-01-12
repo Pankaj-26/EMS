@@ -46,7 +46,7 @@ const AddLeave = () => {
       );
 
       if (response.data.success) {
-        navigate("/employee-dashboard/leaves");
+        navigate(`/employee-dashboard/leaves/${user._id}`);
       } else {
         alert(response.data.error || "Failed to add leave");
       }

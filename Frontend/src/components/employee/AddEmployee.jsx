@@ -59,7 +59,7 @@
 
 
 //   return (
-//     <div className="max-w--4xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md">
+//     <div className="max-w--4xl  mx-auto bg-white p-8 rounded-md shadow-md">
 //       <h2 className="text-2xl font-bold mb-6">Add new employee</h2>
 //       <form onSubmit={handleSubmit}>
 //         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -242,13 +242,14 @@
 //             />
 //           </div>
 
-//           <button
+//         </div>
+        
+//         <button
 //             type="submit"
 //             className="w-full mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-8 rounded"
 //           >
 //             Add Employee
 //           </button>
-//         </div>
 //       </form>
 //     </div>
 //   );
@@ -340,7 +341,7 @@ const AddEmployee = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md">
+    <div className="max-w-4xl mx-auto  bg-white p-8 rounded-md shadow-md">
       <h2 className="text-2xl font-bold mb-6">Add New Employee</h2>
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -66,8 +66,8 @@ const handleFilter=(e)=>{
 
 
   return (
-    <div className='p-6'> 
-           <div className="text-center">
+    <div className="p-8 bg-white rounded-lg shadow-md"> 
+           <div className="text-center text-black">
     <h3 className="text-2xl font-bold">Manage Employees</h3>
   </div>
   <div className="flex justify-between items-center">
@@ -84,11 +84,11 @@ const handleFilter=(e)=>{
       Add Employee
     </Link>
   </div>
-  <DataTable columns={columns} data={filteredEmployees} pagination />
+  <DataTable  columns={columns} data={filteredEmployees} pagination />
   </div>
+
+
   )
 }
 
 export default EmployeeeList
-
-///last 

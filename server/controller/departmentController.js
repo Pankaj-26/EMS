@@ -119,33 +119,63 @@ const getDepartment = async (req, res) => {
 // }
 
 
+// const deleteDepartment = async (req, res) => {
+//     try {
+//       const { id } = req.params;
+  
+//       // Find and delete the department
+//       const deleteDepartment = await Department.findById(id);
+//       await deleteDepartment.deleteOne()
+  
+//       // If the department doesn't exist
+//       if (!deleteDepartment) {
+//         return res
+//           .status(404)
+//           .json({ success: false, error: 'Department not found' });
+//       }
+  
+//       // Successful deletion
+//       return res.status(200).json({
+//         success: true,
+//         message: 'Department deleted successfully',
+//       });
+//     } catch (error) {
+//       return res.status(500).json({
+//         success: false,
+//         error: 'Server error while deleting department',
+//       });
+//     }
+//   };
+  
 const deleteDepartment = async (req, res) => {
-    try {
-      const { id } = req.params;
-  
-      // Find and delete the department
-      const deleteDepartment = await Department.findByIdAndDelete(id);
-  
-      // If the department doesn't exist
-      if (!deleteDepartment) {
-        return res
-          .status(404)
-          .json({ success: false, error: 'Department not found' });
-      }
-  
-      // Successful deletion
-      return res.status(200).json({
-        success: true,
-        message: 'Department deleted successfully',
-      });
-    } catch (error) {
-      return res.status(500).json({
-        success: false,
-        error: 'Server error while deleting department',
-      });
+  try {
+    const { id } = req.params;
+
+    // Check if the department exists
+    const department = await Department.findById(id);
+
+    if (!department) {
+      return res
+        .status(404)
+        .json({ success: false, error: 'Department not found' });
     }
-  };
-  
+
+    // Delete the department
+    await department.deleteOne();
+
+    // Successful deletion
+    return res.status(200).json({
+      success: true,
+      message: 'Department deleted successfully',
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      error: 'Server error while deleting department',
+    });
+  }
+};
+
 
 export {
   addDepartment,

@@ -56,9 +56,9 @@ const handleChange=(e)=>{
   };
 
   return (
-    <div className="flex flex-col items-center h-screen justify-center space-y-6 text-black">
+    <div className="flex items-center  justify-center space-y-6 text-black">
      
-      <div className="border shadow p-6 w-80 bg-white">
+      <div className="max-w-4xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md">
         <h2 className="text-2xl font-bold mb-4">Change Password</h2>
         {error && <p className="text-red-500">{error}</p>}
         <form onSubmit={handleSubmit}>
@@ -100,7 +100,7 @@ const handleChange=(e)=>{
           <div>
             <button
               type="submit"
-              className="w-full bg-teal-600 text-white py-2"
+              className="w-full bg-gray-600 text-white py-2 rounded hover:bg-teal-500"
             >
               Change Password
             </button>

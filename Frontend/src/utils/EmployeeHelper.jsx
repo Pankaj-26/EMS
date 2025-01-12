@@ -29,14 +29,14 @@ export const EmployeeButtons = ({ id }) => {
   return (
     <div className="flex space-x-3">
       <button
-        className="px-3 py-1 bg-teal-600 text-white"
-        onClick={() => navigate(`/employees/${id}`)}
+        className="px-3 py-1 rounded bg-teal-500 text-white"
+        onClick={() => navigate(`/admin-dashboard/employees/${id}`)}
       >
         View
       </button>
-      <button className="px-3 py-1 bg-blue-500 text-white" onClick={() => navigate(`/employees/edit/${id}`)}>Edit</button>
-      <button className="px-3 py-1 bg-yellow-500 text-white" onClick={() => navigate(`/employees/salary/${id}`)}>salary</button>
-      <button className="px-3 py-1 bg-gray-500 text-white" onClick={() => navigate(`/admin-dashboard/employee/leaves/${id}`)}>leave</button>
+      <button className="px-3 rounded py-1 bg-blue-500 text-white" onClick={() => navigate(`/admin-dashboard/employees/edit/${id}`)}>Edit</button>
+      <button className="px-3 rounded py-1 bg-yellow-500 text-white" onClick={() => navigate(`/admin-dashboard/employees/salary/${id}`)}>salary</button>
+      <button className="px-3 rounded py-1 bg-gray-500 text-white" onClick={() => navigate(`/admin-dashboard/employee/leaves/${id}`)}>leave</button>
     </div>
   );
 };

@@ -10,9 +10,12 @@ const AdminDashboard = () => {
  
   return (
   <div className="flex">
-   
-    <AdminSideBar/>
-    <div className="flex-1 ml-64 text-white bg-teal-600" >
+   <div className="fixed w-64 h-full bg-gray-800 text-white shadow-md">
+
+   </div>
+   <AdminSideBar/>
+    <div 
+    className="ml-64 flex-1 text-white left-0 top-0 h-screen shadow-lg" >
       <Navbar/>
      <Outlet/>
       </div>

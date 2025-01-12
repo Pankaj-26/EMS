@@ -33,7 +33,7 @@ export const LeaveButtons = ({ id }) => {
   return (
     <div className="flex space-x-3">
       <button
-        className="px-3 py-1 bg-teal-600 text-white"
+        className="px-3 rounded py-1 bg-teal-600 text-white"
         onClick={() => handleView(id)}
       >
         View

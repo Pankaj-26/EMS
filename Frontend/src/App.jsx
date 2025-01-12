@@ -43,27 +43,30 @@ function App() {
               <RoleBasedRoutes requiredRole={["admin"]}>
                 <AdminDashboard />
               </RoleBasedRoutes>
+              
             </PrivateRoute>
           }
         >
-          {/* Nested child routes */}
-          <Route index element={<AdminSummary />} />
+            {/* Nested child routes */}
+            <Route index element={<AdminSummary />} />
           <Route path="departments" element={<DepartmentList />} />
           <Route path="add-department" element={<AddDepartment />} />
           <Route path="department/:id" element={<EditDepartment />} />
           <Route path="employees" element={<EmployeeList />} />
           <Route path="add-employee" element={<AddEmployee />} />
+            {/* Employee-specific routes */}
+          <Route path="employees/:id" element={<View />} />
+      
+        <Route path="employees/edit/:id" element={<Edit />} />
+        <Route path="salary/add" element={<Add />} />
+        <Route path="employees/salary/:id" element={<ViewSalary />} />
+        <Route path="leaves" element={<Table />} />
+        <Route path={`leaves/:id`} element={<LeaveDetail />} />
+        <Route path={"employee/leaves/:id"} element={<List />} />
+        <Route path={"setting"} element={<Setting />} />
         </Route>
 
-        {/* Employee-specific routes */}
-        <Route path="/employees/:id" element={<View />} />
-        <Route path="/employees/edit/:id" element={<Edit />} />
-        <Route path="/admin-dashboard/salary/add" element={<Add />} />
-        <Route path="/employees/salary/:id" element={<ViewSalary />} />
-        <Route path="/admin-dashboard/leaves" element={<Table />} />
-        <Route path={`/admin-dashboard/leaves/:id`} element={<LeaveDetail />} />
-        <Route path={"/admin-dashboard/employee/leaves/:id"} element={<List />} />
-        <Route path={"/admin-dashboard/setting"} element={<Setting />} />
+      
         
      
         {/* Employee Dashboard routes */}
