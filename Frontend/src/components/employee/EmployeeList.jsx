@@ -55,14 +55,17 @@ const EmployeeeList = () => {
   }, []);
 
 
-const handleFilter=(e)=>{
 
-  const records=employees.filter((emp)=>{
-    emp.name.toLowerCase().includes(e.target.value.toLowerCase())
-
-  })
+const handleFilter = (e) => {
+  const searchValue = e.target.value.toLowerCase();
+  
+  const records = employees.filter((emp) => 
+    emp.name.toLowerCase().includes(searchValue)
+  );
+  
   setFilteredEmployees(records);
-}
+};
+
 
 
   return (
@@ -70,7 +73,7 @@ const handleFilter=(e)=>{
            <div className="text-center text-black">
     <h3 className="text-2xl font-bold">Manage Employees</h3>
   </div>
-  <div className="flex justify-between items-center">
+  <div className="flex justify-between text-black items-center">
     <input
       type="text"
       className="px-4 py-0.5 border"

@@ -45,28 +45,29 @@ export const columns = [
   {
     name: "S No",
     selector: (row) => row.sno,
-    width: "50px",
+    width: "100px",
   },
   {
     name: "Employee Name",
     selector: (row) => row.name,
     sortable: true,
-    width: "150px",
+    width: "180px",
   },
   {
     name: "Profile",
     selector: (row) => row.profileImage,
-    width: "100px",
+    width: "140px",
   },
   {
     name: "Department",
     selector: (row) => row.dep_name,
-    width: "140px",
+    width: "150px",
+    sortable: true,
   },
   {
     name: "DOB",
     selector: (row) => row.dob,
-    sortable: true,
+   
     width: "160px",
   },
   {
