@@ -50,10 +50,11 @@ const Edit = () => {
   
           if (response.data.success) {
             const employee=response.data.employee
+           
             setEmployee((prev) => ({ ...prev, name: employee.userId.name, maritalStatus:employee.maritalStatus,
-                designation:employee.degination,
+                designation:employee.designation,
                 salary:employee.salary,
-                department:employee.department
+                department:employee.department.dep_name
               }));
           }
         } catch (e) {
