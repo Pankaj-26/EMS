@@ -10,7 +10,7 @@ const addSalary = async (req, res) => {
       deductions,
       payDate,
     } = req.body
-
+console.log(allowances)
     const totalSalary =
       parseInt(basicSalary) + parseInt(allowances) + parseInt(deductions)
 

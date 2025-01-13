@@ -54,7 +54,7 @@ const Add = () => {
         }
       );
       if (response.data && response.data.success) {
-        alert("Employee added successfully!");
+        alert("Salary added successfully!");
         navigate("/admin-dashboard/employees");
       } else {
         alert(response.data?.error || "Unexpected error occurred.");
@@ -144,8 +144,8 @@ const Add = () => {
                 <input
                   onChange={handleChange}
                   type="number"
-                  name="allowance"
-                  placeholder="allowance"
+                  name="allowances"
+                  placeholder="allowances"
                   className="mt-1 text-black p-2 block w-full border border-gray-300 rounded-md"
                   required
                 />

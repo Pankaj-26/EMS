@@ -10,6 +10,7 @@ const AuthContext = ({ children }) => {
     const verifyUser = async () => {
       try {
         const token = localStorage.getItem("token");
+       
      
         if (token) {
           const response = await axios.get(
@@ -30,6 +31,7 @@ const AuthContext = ({ children }) => {
       } catch (e) {
         if (e.response && !e.response.data.success) {
           setuser(null);
+      
         }
       } finally {
         setLoading(false);
