@@ -85,7 +85,7 @@ export const getEmployees = async (id) => {
   let employees;
 
   try {
-    const response = await axios.get(`http://localhost:5000/api/employee/department/${id}`, {
+    const response = await axios.get(`https://ems-server-i6vf.onrender.com/api/employee/department/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

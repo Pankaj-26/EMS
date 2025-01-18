@@ -75,7 +75,7 @@ const Edit = () => {
       
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/employee/${id}`,
+        `https://ems-server-i6vf.onrender.com/api/employee/${id}`,
         employee,
         {
           headers: {

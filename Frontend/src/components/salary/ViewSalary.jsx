@@ -13,7 +13,7 @@ const ViewSalary = () => {
 const fetchSalaries=async()=>{
 
   try{
-    const response=await axios.get(`http://localhost:5000/api/salary/view/${id}`,{
+    const response=await axios.get(`https://ems-server-i6vf.onrender.com/api/salary/view/${id}`,{
       headers:{
         Authorization:`Bearer ${localStorage.getItem("token")}`
       }

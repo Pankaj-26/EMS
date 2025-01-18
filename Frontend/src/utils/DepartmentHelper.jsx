@@ -26,7 +26,7 @@ export const DepartmentButtons = ({ _id, departmentDelete }) => {
     if (confirm) {
       try {
         const response = await axios.delete(
-          `http://localhost:5000/api/department/${_id}`,
+          `https://ems-server-i6vf.onrender.com/api/department/${_id}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,

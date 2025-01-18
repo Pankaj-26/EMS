@@ -33,7 +33,7 @@ const EmployeeeList = () => {
             dep_name: emp.department.dep_name,
             name:emp.userId.name,
             dob:new Date(emp.dob).toDateString(),
-            profileImage: <img className='rounded-full' src={`http://localhost:5000/${emp.userId.profileImage}`} alt="" />  ,
+            profileImage: <img className='rounded-full' src={`https://ems-server-i6vf.onrender.com/${emp.userId.profileImage}`} alt="" />  ,
             action: (<EmployeeButtons id={emp._id}/>),
           }));
        

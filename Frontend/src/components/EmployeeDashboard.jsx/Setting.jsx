@@ -33,7 +33,7 @@ const handleChange=(e)=>{
     }else{
     try {
       const response = await axios.put(
-        "http://localhost:5000/api/setting/change-password",
+        "https://ems-server-i6vf.onrender.com/api/setting/change-password",
         setting,{
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,

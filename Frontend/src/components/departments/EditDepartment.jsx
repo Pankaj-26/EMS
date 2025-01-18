@@ -28,7 +28,7 @@ const EditDepartment = () => {
     }
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/department/${id}`,
+        `https://ems-server-i6vf.onrender.com/api/department/${id}`,
         department,
         {
           headers: {
