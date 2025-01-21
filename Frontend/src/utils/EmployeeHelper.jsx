@@ -4,7 +4,7 @@ export const fetchDepartments = async () => {
   let departments;
 
   try {
-    const response = await axios.get("http://localhost:5000/api/department/", {
+    const response = await axios.get("https://ems-server-i6vf.onrender.com/api/department/", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
