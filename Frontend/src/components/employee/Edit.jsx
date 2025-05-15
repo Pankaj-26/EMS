@@ -84,7 +84,7 @@ const Edit = () => {
         }
       );
       if (response.data && response.data.success) {
-        alert("Employee added successfully!");
+        alert("Employee Updated successfully!");
         navigate("/admin-dashboard/employees");
       } else {
         alert(response.data?.error || "Unexpected error occurred.");
@@ -191,7 +191,7 @@ const Edit = () => {
           type="submit"
           className="w-full mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-8 rounded"
         >
-          Edit Employee
+          Update Employee
         </button>
       </form>
     </div>): <div>Loading...</div> }

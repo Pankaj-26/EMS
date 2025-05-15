@@ -13,7 +13,7 @@ import {
 
 const AdminSideBar = () => {
   return (
-    <div className="bg-gray-900 text-white h-screen fixed left-0 top-0 bottom-0 w-64 shadow-lg">
+    <div className="bg-gray-900 text-white h-screen fixed left-0 top-0 bottom-0 w-64 shadow-lg z-50">
       {/* Header */}
       <div className="bg-gray-700 h-16 flex items-center justify-center shadow-md">
         <h3 className="text-xl font-semibold">Employee MS</h3>

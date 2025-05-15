@@ -33,6 +33,7 @@ const View = () => {
     fetchEmployee();
   }, []);
 
+
   return (
     <>
     {employee?(
@@ -43,7 +44,7 @@ const View = () => {
      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8"
       >
         <img
-          src={`http://localhost:5000/${employee.userId.profileImage}`}
+          src={`https://ems-server-i6vf.onrender.com/${employee.userId.profileImage}`}
           alt=""  className="rounded-full w-40 h-40 object-cover border-4 border-indigo-200 shadow-md"
         />
       </div>
